@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload de Planilha</title>
+</head>
+<body>
+    <h1>Enviar Planilha Excel</h1>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <input name="file" type="file" accept=".xlsx">
+        <input type="submit">
+    </form>
+
+    {% if urls %}
+        <h2>Imagens enviadas:</h2>
+        <ul>
+        {% for url in urls %}
+            <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
